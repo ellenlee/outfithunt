@@ -34,8 +34,16 @@ ActiveRecord::Schema.define(version: 20161013183838) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "color_id"
+    t.integer  "material_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_requests_on_category_id"
+    t.index ["color_id"], name: "index_requests_on_color_id"
+    t.index ["material_id"], name: "index_requests_on_material_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

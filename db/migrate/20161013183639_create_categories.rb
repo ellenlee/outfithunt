@@ -2,7 +2,7 @@ class CreateCategories < ActiveRecord::Migration[5.0]
   def change
     create_table :categories do |t|
     	t.integer :name
-    	t.index :name
+    	t.index :name, unique: true
       t.timestamps
     end
   end
