@@ -1,6 +1,14 @@
 class GuideController < ApplicationController
 
-	def outfits
+	def request
+		
+	end
+
+	def tag
+		
+	end
+
+	def outfit
 		
 	end
 
