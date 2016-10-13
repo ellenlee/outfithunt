@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :items, only: :show
   resources :tags
 
+  get "/guide" => "guide#index"
   get "/guide/request" => "guide#request"
   get "/guide/tag" => "guide#tag"
   get "/guide/outfit" => "guide#outfit"
