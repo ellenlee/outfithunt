@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   	resources :outfits
   end
   resources :items, only: :show
+  resources :tags
+
+  get "/outfit" => "guide#outfits"
+  get "/outfit/show" => "guide#outfit_show"
+  get "/item/show" => "guide#item_show"
+
 
   namespace :admin do
   	resources :outfits
@@ -14,6 +20,6 @@ Rails.application.routes.draw do
   	resources :tags
   end
 
-  root to: "guide#index"
+  root "guide#index"
 
 end
