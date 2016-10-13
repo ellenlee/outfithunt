@@ -1,0 +1,75 @@
+<h1>Outfit Hunt</h1>
+
+<h3>實作流程</h3>
+<ol>
+	<li>讓畫面存在（意即路由存在）</li>
+	<li>讓資料表存在</li>
+	<li>讓資料關聯存在</li>
+	<li>讓實體資料可以透過關聯被撈出來</li>
+	<li>讓流程是對的</li>
+	<li>讓每個流程的畫面和設計稿一致</li>
+</ol>
+<hr>
+以下為測試頁清單:
+
+<table class="table table-bordered">
+	<tr>
+		<td>圖</td>
+		<td></td>	
+		<td><%= image_tag "pd_page_01.png", height: '100px' %></td>
+		<td><%= image_tag "pd_page_02.png", height: '100px' %></td>
+		<td><%= image_tag "pd_page_03.png", height: '100px' %></td>
+		<td><%= image_tag "pd_page_04.png", height: '100px' %></td>
+		<td><%= image_tag "pd_page_05.png", height: '100px' %></td>
+	</tr>	
+	<tr>
+		<td>名稱</td>
+		<td>用戶登入</td>
+		<td>上傳照片</td>
+		<td>輸入照片屬性</td>
+		<td>搜尋穿搭照</td>
+		<td>選擇適合穿搭</td>
+		<td>選擇適合單品</td>
+	</tr>
+	<tr>
+		<td>涉及資料/功能</td>
+		<td>註冊/臉書登入</td>	
+		<td>
+			上傳照片
+		</td>
+		<td>
+			<p>輸入tag</p>
+			<p>tags: color, material, category</p>
+		</td>
+		<td>
+			<p>outfit 的照片 relative to tags</p>
+		</td>
+		<td>
+			<p>a certain outfit photo</p>
+			<p>related items</p>
+		</td>
+		<td>
+			<p>the item selected by user</p>
+			<p>related outfit photos</p>
+			<p>details of item</p>
+		</td>
+	</tr>
+	<tr>
+		<td>路由</td>
+		<td></td>
+		<td>requests#create</td>
+		<td>requests/:id/tags #create</td>
+		<td>outfits#index</td>
+		<td>outfits/:id #show </td>
+		<td> items/:id #show </td>
+	</tr>
+	<tr>
+		<td>測試頁</td>
+		<td></td>
+		<td><%= link_to '進入' %></td>
+		<td><%= link_to '進入' %></td>	
+		<td><%= link_to '進入' %></td>
+		<td><%= link_to '進入' %></td>
+		<td><%= link_to '進入' %></td>
+	</tr>
+</table>
