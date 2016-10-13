@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013183838) do
+ActiveRecord::Schema.define(version: 20161013190840) do
 
   create_table "categories", force: :cascade do |t|
     t.integer  "name"
@@ -26,11 +26,38 @@ ActiveRecord::Schema.define(version: 20161013183838) do
     t.index ["name"], name: "index_colors_on_name"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "color_id"
+    t.integer  "material_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["color_id"], name: "index_items_on_color_id"
+    t.index ["material_id"], name: "index_items_on_material_id"
+  end
+
   create_table "materials", force: :cascade do |t|
     t.integer  "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_materials_on_name"
+  end
+
+  create_table "outfit_itemships", force: :cascade do |t|
+    t.integer  "outfit_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_outfit_itemships_on_item_id"
+    t.index ["outfit_id"], name: "index_outfit_itemships_on_outfit_id"
+  end
+
+  create_table "outfits", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "requests", force: :cascade do |t|
