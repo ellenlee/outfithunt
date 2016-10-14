@@ -1,0 +1,18 @@
+<h3>相關單品</h3>
+
+<div class="outfit">
+  <%= @outfit.name %>	
+</div>
+<hr>
+<div>
+	<%= image_tag @request.img.url(:thumb) %>
+	<br>
+	<%= @related_item.name %>
+</div>
+<hr>
+
+<ul>
+	<% @other_items.each do |item| %>
+		<li><%= item.name %></li>
+	<% end %>
+</ul>

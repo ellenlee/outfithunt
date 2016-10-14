@@ -6,7 +6,10 @@ class RequestOutfitsController < ApplicationController
 	end
 
 	def show
-		
+ 		@outfit = Outfit.find(params[:id])		
+ 		@items = @outfit.items
+ 		@related_item = @outfit.related_item(@request)
+ 		@other_items = @outfit.items.where.not(id: @related_item)
 	end
 
 	private
