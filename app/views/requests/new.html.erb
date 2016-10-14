@@ -1,13 +1,13 @@
 <h3>輸入屬性</h3>
 
-<div>
-	
+<div class="request_photo">
+	s
 </div>
 
-<%= simple_form_for @request do |f| %>
-  <%= f.input :color, collection: @colors, prompt: "選擇顏色"%>
-  <%= f.input :material, collection: @materials, prompt: "選擇材質" %>
-  <%= f.input :category, collection: @categories, prompt: "選擇種類" %>
+<%= simple_form_for @request, wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
+  <%= f.input :color, collection: Color.all, prompt: "選擇顏色", required: true %>
+  <%= f.input :material, collection: Material.all, prompt: "選擇材質", required: true  %>
+  <%= f.input :category, collection: Category.all, prompt: "選擇種類", required: true  %>
 		<br><br>
   <div class="form-group">
 	  <%= f.button :submit, "確定", class: "btn-primary" %>
