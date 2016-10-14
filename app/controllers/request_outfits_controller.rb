@@ -1,0 +1,2 @@
+class RequestOutfitsController < ApplicationController
+end

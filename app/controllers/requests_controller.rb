@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 	def create
 		@request = current_user.requests.build(request_params)
 		if @request.save
-			redirect_to 'new', notice: "新增成功！"
+			redirect_to request_outfits_path(@request), notice: "新增成功！"
 		else
 			render "new"
 		end
