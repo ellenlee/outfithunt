@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :requests
+
+  def admin?
+  	self.role == "admin"
+  end
 end

@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # gem "rails-i18n"
 gem 'devise'
+gem 'rails_admin', '~> 1.0'
+# gem 'activeadmin', '~> 1.0.0.pre4'
+# gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # gem 'omniauth-facebook'
 # gem 'rest-client'
 

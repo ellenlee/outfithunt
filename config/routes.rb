@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -15,13 +16,8 @@ Rails.application.routes.draw do
   get "/guide/item/show" => "guide#item_show"
 
 
-  namespace :admin do
-  	resources :outfits
-  	resources :items
-  	resources :users
-  	resources :tags
-  end
-
   root "guide#index"
 
+
+  # match ':controller(/:action(/:id(.:format)))'
 end
