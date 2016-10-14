@@ -7,3 +7,7 @@
 	<li><%= @request.category.name %></li>
 </ul>
 <hr>
+
+<% @outfits.each do |outfit| %>
+	<p><%= link_to outfit.name, request_outfit_path(@request, outfit) %></p>
+<% end %>
