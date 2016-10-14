@@ -1,15 +1,24 @@
 <h3>輸入屬性</h3>
 
-<div class="request_photo">
-	s
-</div>
-
 <%= simple_form_for @request, wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
-  <%= f.input :color, collection: Color.all, prompt: "選擇顏色", required: true %>
-  <%= f.input :material, collection: Material.all, prompt: "選擇材質", required: true  %>
-  <%= f.input :category, collection: Category.all, prompt: "選擇種類", required: true  %>
+
+  <div class="request_photo">
+    在此上傳照片<br>
+    <div class="img-show" style="display: none">
+      <img id="thumbnil" width="200px" src="" alt="image"/>
+    </div>
+
+    <%= f.input :img, input_html: {accept: "image/*",  onchange: "showMyImage(this)"} %>
+  
+  </div>
+
+  <%= f.input :color_id, collection: Color.all, prompt: "選擇顏色", required: true %>
+  <%= f.input :material_id, collection: Material.all, prompt: "選擇材質", required: true  %>
+  <%= f.input :category_id, collection: Category.all, prompt: "選擇種類", required: true  %>
 		<br><br>
   <div class="form-group">
 	  <%= f.button :submit, "確定", class: "btn-primary" %>
   </div>
 <% end %>
+
+

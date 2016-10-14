@@ -17,6 +17,6 @@ class RequestsController < ApplicationController
 
 	private 
 	def request_params
-		params.require(:request).permit(:user_id, :color_id, :material_id, :category_id)
+		params.require(:request).permit(:user_id, :color_id, :material_id, :category_id, :img)
 	end
 end
