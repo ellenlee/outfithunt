@@ -1,0 +1,12 @@
+<h3>中意單品</h3>
+
+<div class="img-frame">
+  <%= @item.name %>	
+</div>
+<hr>
+<% @item.outfits.each do |outfit| %>
+	<ul>
+		<li><%= outfit.name %></li>
+	</ul>
+<% end %>
+<hr>
