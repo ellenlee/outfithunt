@@ -1,0 +1,15 @@
+<h3>輸入屬性</h3>
+
+<div>
+	
+</div>
+
+<%= simple_form_for @request do |f| %>
+  <%= f.input :color, collection: @colors, prompt: "選擇顏色"%>
+  <%= f.input :material, collection: @materials, prompt: "選擇材質" %>
+  <%= f.input :category, collection: @categories, prompt: "選擇種類" %>
+		<br><br>
+  <div class="form-group">
+	  <%= f.button :submit, "確定", class: "btn-primary" %>
+  </div>
+<% end %>
