@@ -1,0 +1,9 @@
+<h3>搜尋穿搭</h3>	
+
+<%= image_tag @request.img.url(:thumb), style: "border: 1px solid #ccc" %>
+<ul>
+	<li><%= @request.color.name %></li>
+	<li><%= @request.material.name %></li>
+	<li><%= @request.category.name %></li>
+</ul>
+<hr>

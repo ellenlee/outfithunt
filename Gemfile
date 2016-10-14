@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem "mini_magick"
 # gem 'kaminari'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
