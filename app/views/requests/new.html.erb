@@ -1,0 +1,8 @@
+<h3>輸入屬性</h3>
+
+<%= simple_form_for @request, wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
+  <%= f.input :color, collection: @colors, prompt: "顏色" %>
+  <%= f.input :material, collection: @materials, prompt: "材質" %>
+  <%= f.input :category, collection: @categories, prompt: "種類" %>
+  <%= f.button :submit %>
+<% end %>

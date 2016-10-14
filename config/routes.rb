@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   	resources :outfits
   end
   resources :items, only: :show
-  resources :tags
 
   get "/guide" => "guide#index"
   get "/guide/request" => "guide#request"
