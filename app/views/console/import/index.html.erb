@@ -1,0 +1,7 @@
+<h4>匯入 .csv 檔</h4>
+<%= form_tag console_import_index_path, multipart: true do %>
+
+	<%= file_field_tag :file %>
+	<br>
+	<%= submit_tag "Import CSV", class: "btn btn-primary" %>
+<% end %>

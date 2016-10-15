@@ -11,7 +11,9 @@
     <% end %> 
   </ul>  
   <p><%= link_to "回到首頁", :root %>
-  ｜<%= link_to 'ADMIN', rails_admin.dashboard_path %></p>
+  ｜<%= link_to 'ADMIN', rails_admin.dashboard_path %>
+  ｜<%= link_to '匯入資料', console_import_index_path %>
+  </p>
   <p>說明
     ｜<%= link_to '上傳照片', guide_request_path %>
     ｜<%= link_to '輸入屬性', guide_tag_path %>
