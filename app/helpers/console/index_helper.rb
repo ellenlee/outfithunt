@@ -1,0 +1,2 @@
+module Console::IndexHelper
+end

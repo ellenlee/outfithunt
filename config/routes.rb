@@ -18,6 +18,16 @@ Rails.application.routes.draw do
 
   root "guide#index"
 
+  namespace :console do
+    resources :items do
+      post :import, on: :collection
+    end
+
+    # get "dashboard" => "consoles#dashboard"
+    resources :import
+
+    root "index#index"
+  end
 
   # match ':controller(/:action(/:id(.:format)))'
 end

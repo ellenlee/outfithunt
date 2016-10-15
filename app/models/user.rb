@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :requests
 
+  include Flyable
+
   def admin?
   	self.role == "admin"
   end
