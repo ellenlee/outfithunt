@@ -1,5 +1,17 @@
 <h2>Console Interface</h2>
 
-<ul>
-	<li><%= link_to '匯入單品', console_items_path %></li>
-</ul>
+<table class="table table-bordered">
+  <tr>
+    <th>import</th>
+    <th>list</th>
+  </tr>
+  <tr>
+    <td><%= link_to '匯入單品', new_console_item_path %></td>
+    <td><%= link_to '查看單品', console_items_path %></td>
+  </tr>
+  <tr>
+    <td><%= link_to '匯入穿搭', new_console_outfit_path %></td>
+    <td><%= link_to '查看穿搭', console_outfits_path %></td>
+  </tr>
+
+</table>

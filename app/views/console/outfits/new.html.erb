@@ -1,0 +1,9 @@
+<h3>匯入穿搭</h3>
+
+<%= form_tag import_console_outfits_path, multipart: true do %>
+
+	<%= file_field_tag :file %>
+	<br>
+	<%= submit_tag "Import CSV", class: "btn btn-primary" %>
+<% end %>
+

@@ -1,9 +1,9 @@
 class Console::ImportController < ApplicationController
 	def index
-		
+
 	end
 
-	def import
-		
+	def item
+
 	end
 end

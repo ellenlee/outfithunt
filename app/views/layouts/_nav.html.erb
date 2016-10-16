@@ -1,6 +1,6 @@
 <nav id="nav-site" class="clearfix">
 <!-- 功能導覽列 -->
-  
+
   <ul class="list-inline pull-right">
     <% if current_user %>
       <%= current_user.email %>｜
@@ -8,11 +8,11 @@
     <% else %>
       <%= link_to('註冊', new_registration_path(:user)) %>｜
       <%= link_to('登入', new_session_path(:user)) %>
-    <% end %> 
-  </ul>  
+    <% end %>
+  </ul>
   <p><%= link_to "回到首頁", :root %>
   ｜<%= link_to 'ADMIN', rails_admin.dashboard_path %>
-  ｜<%= link_to '匯入資料', console_import_index_path %>
+  ｜<%= link_to '匯入資料', controller: "console/index", action: "index" %>
   </p>
   <p>說明
     ｜<%= link_to '上傳照片', guide_request_path %>
@@ -28,10 +28,10 @@
   <!-- 警告訊息 -->
   <% if flash[:notice].present? %>
     <div class="alert alert-success" role="alert">
-      <%= flash[:notice]%>
+      <%= flash[:notice] %>
     </div>
   <% elsif flash[:alert].present? %>
     <div class="alert alert-danger" role="alert">
-      <%= flash[:alert]%>
+      <%= flash[:alert] %>
     </div>
   <% end %>

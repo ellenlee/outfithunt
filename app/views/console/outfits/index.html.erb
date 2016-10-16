@@ -1,0 +1,27 @@
+<h3>穿搭列表</h3>
+
+<p>共 <%= @outfits.count %> 件單品</p>
+<table class="table table-bordered">
+  <tr>
+    <th>#</th>
+    <th>穿搭名</th>
+    <th>圖</th>
+    <th>相關單品</th>
+    <th>場合</th>
+  </tr>
+  <% @outfits.each do |outfit| %>
+    <tr>
+      <td><%= outfit.id %></td>
+      <td><%= outfit.name %></td>
+      <td><%= image_tag outfit.image_url, height: '60px' %></td>
+      <td>
+          <% outfit.item_images.each do |img| %>
+
+          <%= image_tag img.file_path, height: '60px' %>
+        <% end %>
+      </td>
+      <td><%= outfit.occasions.pluck(:name).join("｜") %></td>
+    </tr>
+  <% end %>
+</table>
+

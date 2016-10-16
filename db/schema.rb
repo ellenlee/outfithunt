@@ -10,20 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014163325) do
+ActiveRecord::Schema.define(version: 20161016045549) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_brands_on_name", unique: true
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_categories_on_name"
+    t.index ["name"], name: "index_categories_on_name", unique: true
   end
 
   create_table "colors", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_colors_on_name"
+    t.index ["name"], name: "index_colors_on_name", unique: true
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "file_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["name"], name: "index_images_on_name", unique: true
+  end
+
+  create_table "item_imageships", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_item_imageships_on_image_id"
+    t.index ["item_id"], name: "index_item_imageships_on_item_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -33,6 +57,10 @@ ActiveRecord::Schema.define(version: 20161014163325) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "img"
+    t.integer  "style_id"
+    t.integer  "brand_id"
+    t.integer  "price"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["color_id"], name: "index_items_on_color_id"
     t.index ["material_id"], name: "index_items_on_material_id"
@@ -42,7 +70,14 @@ ActiveRecord::Schema.define(version: 20161014163325) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_materials_on_name"
+    t.index ["name"], name: "index_materials_on_name", unique: true
+  end
+
+  create_table "occasions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_occasions_on_name", unique: true
   end
 
   create_table "outfit_itemships", force: :cascade do |t|
@@ -54,10 +89,21 @@ ActiveRecord::Schema.define(version: 20161014163325) do
     t.index ["outfit_id"], name: "index_outfit_itemships_on_outfit_id"
   end
 
+  create_table "outfit_occasionships", force: :cascade do |t|
+    t.integer  "outfit_id"
+    t.integer  "occasion_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["occasion_id"], name: "index_outfit_occasionships_on_occasion_id"
+    t.index ["outfit_id"], name: "index_outfit_occasionships_on_outfit_id"
+  end
+
   create_table "outfits", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "image_id"
+    t.index ["image_id"], name: "index_outfits_on_image_id", unique: true
   end
 
   create_table "requests", force: :cascade do |t|
@@ -72,6 +118,13 @@ ActiveRecord::Schema.define(version: 20161014163325) do
     t.index ["color_id"], name: "index_requests_on_color_id"
     t.index ["material_id"], name: "index_requests_on_material_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_styles_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

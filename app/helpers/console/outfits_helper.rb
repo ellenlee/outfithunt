@@ -1,0 +1,2 @@
+module Console::OutfitsHelper
+end

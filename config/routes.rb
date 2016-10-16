@@ -22,9 +22,15 @@ Rails.application.routes.draw do
     resources :items do
       post :import, on: :collection
     end
+    resources :outfits do
+      post :import, on: :collection
+    end
 
     # get "dashboard" => "consoles#dashboard"
-    resources :import
+    # resources :import do
+    #   get :item, on: :collection
+    #   get :outfit, on: :collection
+    # end
 
     root "index#index"
   end

@@ -1,0 +1,16 @@
+<h3>匯入單品</h3>
+
+<%= form_tag import_console_items_path, multipart: true do %>
+
+  <%= file_field_tag :file %>
+  <br>
+  <%= submit_tag "Import CSV", class: "btn btn-primary" %>
+<% end %>
+<hr>
+<%= "sdf\r\nsdf" %>
+<hr>
+<%= image_tag ("/default.png"), width: '200px' %>
+
+<%= image_tag (Image.last.file_path), width: '200px' %>
+<%= image_tag ("items/item00001.jpg"), width: '200px' %>
+

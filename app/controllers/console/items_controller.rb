@@ -1,11 +1,11 @@
 class Console::ItemsController < ApplicationController
 	def index
-		
+    @items = Item.all
 	end
 
 	def import
-		Item.import(params[:file])
-    redirect_to console_items_path, notice: "Items imported."
+		msg = Item.import(params[:file])
+    redirect_to console_items_path, notice: msg
 	end
 
 end

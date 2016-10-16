@@ -1,8 +1,34 @@
-<h3>匯入單品</h3>
+<h3>單品列表</h3>
 
-<%= form_tag import_console_items_path, multipart: true do %>
+<p>共 <%= @items.count %> 件單品</p>
+<table class="table table-bordered">
+  <tr>
+    <th>#</th>
+    <th>單品名</th>
+    <th>品牌</th>
+    <th>圖</th>
+    <th>風格</th>
+    <th>顏色</th>
+    <th>材質</th>
+    <th>種類</th>
+    <th>價格</th>
+  </tr>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.id %></td>
+      <td><%= item.name %></td>
+      <td><%= item.brand.name %></td>
+      <td>
+        <% item.images.each do |img| %>
+          <%= image_tag img.file_path, width: '60px' %>
+        <% end %>
+      </td>
+      <td><%= item.style.name %></td>
+      <td><%= item.color.name %></td>
+      <td><%= item.material.name %></td>
+      <td><%= item.category.name %></td>
+      <td><%= item.price %></td>
+    </tr>
+  <% end %>
+</table>
 
-	<%= file_field_tag :file %>
-	<br>
-	<%= submit_tag "Import CSV", class: "btn btn-primary" %>
-<% end %>
