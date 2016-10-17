@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :requests do
   	resources :outfits, controller: 'request_outfits'
   end
-  resources :items, only: :show
+  resources :items, only: :show do
+    resources :outfits, controller: 'item_outfits'
+  end
 
   get "/guide" => "guide#index"
   get "/guide/request" => "guide#request"
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
   get "/guide/item/show" => "guide#item_show"
 
 
-  root "guide#index"
+  root "requests#new"
 
   namespace :console do
     resources :items do

@@ -1,5 +1,6 @@
 class Console::ItemsController < ApplicationController
-	def index
+	layout 'console'
+  def index
     @items = Item.all
 	end
 

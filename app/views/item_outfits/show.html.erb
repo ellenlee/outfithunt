@@ -1,10 +1,9 @@
 <section class="request-photo flex-center">
   <%= image_tag @outfit.image.file_path %>
 </section>
+
 <section class="compare-items flex-around">
   <div class="request-item">
-    <%= image_tag @request.img.url(:thumb) %>
-    <span>=</span>
     <%= link_to image_tag(@related_item.images.first.file_path) , item_path(@related_item) %>
   </div>
   <div class="collection">
@@ -14,7 +13,7 @@
 <section class="related-objects full-width flex-center">
   <div class="footer flex-top">
     <% @other_items.each do |item| %>
-      <div class="objects flex-center">
+      <div class="objects">
         <%= link_to image_tag(item.images.first.file_path), item_path(item) %>
       </div>
     <% end %>

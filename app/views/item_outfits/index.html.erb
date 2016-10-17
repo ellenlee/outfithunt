@@ -1,16 +1,17 @@
 <div class="user-request">
   <div class="request-item">
-    <%= image_tag @request.img.url(:thumb) %>
+    <%= image_tag @item.images.first.file_path %>
   </div>
-  <ul class="tag-list list-inline">
-    <li><%= @request.color.name %></li>
-    <li><%= @request.material.name %></li>
-    <li><%= @request.category.name %></li>
+  <ul class="list-inline tag-list">
+    <li><%= @item.color_name %></li>
+    <li><%= @item.material_name %></li>
+    <li><%= @item.category_name %></li>
+    <li>style</li>
   </ul>
 </div>
 <div class="outfits-index">
   <% @outfits.each do |outfit| %>
-  	<%= link_to (image_tag outfit.image_url, height: '60px'), request_outfit_path(@request, outfit) %>
+  	<%= link_to (image_tag outfit.image_url, height: '60px'), item_outfit_path(@item, outfit) %>
   <% end %>
 </div>
 

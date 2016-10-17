@@ -13,6 +13,19 @@ class Item < ApplicationRecord
 	has_many :item_imageships, dependent: :destroy
 	has_many :images, through: :item_imageships, dependent: :destroy
 
+	TAGS = ["brand", "color", 'style', 'category', 'material']
+
+	TAGS.each do |tag|
+		define_method "#{tag}_name" do
+			object = tag.capitalize.constantize.includes(:items).where(items: {id: self})
+			if object.present?
+				object.first.name
+			else
+				"-"
+			end
+		end
+	end
+
 	def self.find_by_image_file_name(file_name)
 		self.includes(:images).where(images: {file_path: "items/"+file_name})
 	end
