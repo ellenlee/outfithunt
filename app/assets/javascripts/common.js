@@ -1,4 +1,3 @@
-
 function showMyImage(fileInput) {
   console.log('showMyImage start');
   var files = fileInput.files;
@@ -21,4 +20,4 @@ function showMyImage(fileInput) {
   }
   $('.img-show').toggle('show');
   $('.fileUpload').toggle('hide');
-}
+};

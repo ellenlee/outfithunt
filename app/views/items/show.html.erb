@@ -1,12 +1,35 @@
-<h3>中意單品</h3>
+<section class="request_photo">
+  <%= image_tag @item.images.first.file_path %>
+</section>
+<section class="item-operator">
+  <div class="item-details">
+    <p><%= @item.brand_name %><br>
+    <%= @item.name %></p>
+    <h5>NT. <%= @item.price %></h5>
+    <div class="size-and-quantity">
+      <div>尺寸</div>
+      <div>數量</div>
+    </div>
+  </div>
+  <div class="put-in-cart">
+    <span class="btn">放入購物車</span>
+  </div>
+</section>
+<section class="footer">
+  <h6>類似款穿搭</h6>
+  <div class="related-outfits">
+    <% @item.outfits.each do |outfit| %>
+      <div class="items">
+        <%= link_to image_tag(outfit.image.file_path), {} %>
+      </div>
+    <% end %>
+  </div>
+</section>
 
-<div class="img-frame">
-  <%= @item.name %>	
-</div>
-<hr>
-<% @item.outfits.each do |outfit| %>
-	<ul>
-		<li><%= outfit.name %></li>
-	</ul>
-<% end %>
-<hr>
+
+<script>
+  $(".request_photo img").click(function(){
+    console.log("i am clicked!");
+    $(".request_photo").toggleClass('stretch');
+  });
+</script>

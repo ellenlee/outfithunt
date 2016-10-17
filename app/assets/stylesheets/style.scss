@@ -76,7 +76,7 @@ input[type="submit"].next {
   color: #fff;
 }
 
-.request_photo, .img-frame {
+.request_photo {
   width: 100vw; height: 80vw;
   background-color: #eee;
   display:flex;
@@ -85,10 +85,13 @@ input[type="submit"].next {
   overflow: hidden;
 }
 
+.request_photo.stretch {
+  height: auto !important ;
+}
+
 .request_photo img {
   width: auto;
   height : auto;
-  max-height: auto;
   max-width: 100%;
 }
 
@@ -235,8 +238,6 @@ img.recommend {
   height : auto;
   max-height: 100%;
   max-width: 66px;
-  border-radius: 3px;
-  border: solid 1px #dadada;
 }
 
 .collection {
@@ -255,7 +256,7 @@ img.recommend {
   width: 100vw;
   overflow: auto;
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   padding-top: 10px;
 }
@@ -264,20 +265,74 @@ img.recommend {
   width: 66px;
   height: 66px;
   margin-left: 6px;
-}
-/*.request-item {
-  width: 50px;
-  height: 50px;
-  padding: 7px;
-}
-
-.request-item img {
-  width: auto;
-  height : auto;
-  max-height: 100%;
-  max-width: 100%;
   border-radius: 3px;
   border: solid 1px #dadada;
-}*/
+}
 
+/* items-show */
 
+#items-show .request_photo {
+  height: 200px;
+}
+
+.item-operator {
+  background-color: #0b1647;
+  height: calc( (100vh - 48px - 200px)/2 );
+  color: #fff;
+  font-size: 8px;
+  padding: 13px;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.item-details h5 {
+  color: #96d6e0;
+}
+
+.put-in-cart {
+  border-radius: 5px;
+  background-color: #ff5d5d;
+  font-size: 12px;
+}
+
+.size-and-quantity {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.size-and-quantity div {
+  width: 60px;
+  height: 24px;
+  padding: 3px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: solid 1px #ffffff;
+  font-size: 6px;
+}
+
+.footer {
+  height: calc( (100vh - 48px - 200px)/2 );
+  width: 100vw;
+  overflow: auto;
+}
+
+.footer h6 {
+  margin-left: 10px;
+}
+
+.related-outfits {
+  width: 100vw;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#items-show .items {
+  overflow: hidden;
+}
+
+#items-show .items img {
+  max-height: none;
+}
