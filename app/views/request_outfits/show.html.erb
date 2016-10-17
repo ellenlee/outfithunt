@@ -1,20 +1,27 @@
-<h3>相關單品</h3>
+<section class="request_photo">
+  <%= image_tag @outfit.image.file_path %>
+</section>
 
-<div class="outfit">
-  <%= @outfit.name %>	<br>
-</div>
-<hr>
-<div>
-	<%= image_tag @request.img.url(:thumb) %>
-	<br>
-	<%= @related_item.name %>:
-	<%= @related_item.color.name %>|<%= @related_item.material.name %>|<%= @related_item.category.name %>
-</div>
-<hr>
+<section class="compare-items">
+  <div class="request-item">
+    <%= image_tag @request.img.url(:thumb) %>
+    <span>=</span>
+    <%= image_tag @related_item.images.first.file_path %>
+  </div>
+  <div class="collection">
+    收藏穿搭
+  </div>
+</section>
+<section class="related-items">
+  <% @other_items.each do |item| %>
+    <div class="items">
+      <%= image_tag item.images.first.file_path %>
+    </div>
+  <% end %>
+  <% @recommend_items.each do |item| %>
+    <div class="items">
+      <%= image_tag item.images.first.file_path %>
+    </div>
+  <% end %>
+</section>
 
-<ul>
-	<% @other_items.each do |item| %>
-		<li><%= link_to item.name, item_path(item) %>:
-	<%= item.color.name %>|<%= item.material.name %>|<%= item.category.name %></li>
-	<% end %>
-</ul>

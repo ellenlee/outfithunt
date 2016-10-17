@@ -2,10 +2,16 @@ class Item < ApplicationRecord
 	# mount_uploader :img, ImgUploader
 
 	belongs_to :brand
+	delegate :name, to: :brand, prefix: true, allow_nil: true
 	belongs_to :color
+	delegate :name, to: :color, prefix: true, allow_nil: true
 	belongs_to :style
+	delegate :name, to: :style, prefix: true, allow_nil: true
 	belongs_to :material
+	delegate :name, to: :material, prefix: true, allow_nil: true
 	belongs_to :category
+	delegate :name, to: :category, prefix: true, allow_nil: true
+
 
 	has_many :outfit_itemships, dependent: :destroy
 	has_many :outfits, through: :outfit_itemships

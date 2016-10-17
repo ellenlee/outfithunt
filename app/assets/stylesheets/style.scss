@@ -76,24 +76,29 @@ input[type="submit"].next {
   color: #fff;
 }
 
-
-/* requests-new */
-
-.request_photo, .outfit, .img-frame {
-	width: 100vw; height: 80vw;
-	background-color: #eee;
+.request_photo, .img-frame {
+  width: 100vw; height: 80vw;
+  background-color: #eee;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow: auto;
+  overflow: hidden;
 }
+
+.request_photo img {
+  width: auto;
+  height : auto;
+  max-height: auto;
+  max-width: 100%;
+}
+
+/* requests-new */
 
 .img-show {
   display: none;
-}
-
-.img-show #thumbnil {
-  width: 100vw;
+  width: inherit;
+  height: inherit;
+  text-align: center;
 }
 
 .fileUpload {
@@ -156,12 +161,13 @@ input[type="submit"].next {
 
 }
 
-.request-img {
+.request-item {
   width: 50px;
   height: 50px;
   padding: 7px;
 }
-.user-request img {
+
+.request-item img, .related-item img {
   width: auto;
   height : auto;
   max-height: 100%;
@@ -178,11 +184,6 @@ input[type="submit"].next {
   margin: auto 1px;
   padding: 4px 14px;
   font-size: 14px;
-}
-
-.rectangle-copy-15 {
-  width: 122.5px;
-  height: 135.7px;
 }
 
 .list-outfits {
@@ -208,4 +209,75 @@ img.recommend {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
   border: solid 1px #9b9b9b;
 }
+
+/* request_outfits-show */
+
+.compare-items {
+  width: 100vw;
+  height: calc((100vh - 48px - 80vw)/2);
+  padding: 14px;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
+#request_outfits-show .request-item {
+  width: 160px;
+  height: 66px;
+  padding: 0;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.request-item img, .items img {
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 66px;
+  border-radius: 3px;
+  border: solid 1px #dadada;
+}
+
+.collection {
+  width: 66px;
+  height: 66px;
+  border-radius: 5px;
+  background-color: #d23076;
+  padding: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+.related-items {
+  background-color: #0b1647;
+  height: calc( (100vh - 48px - 80vw)/2 );
+  width: 100vw;
+  overflow: auto;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.items {
+  width: 66px;
+  height: 66px;
+  margin-left: 6px;
+}
+/*.request-item {
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+}
+
+.request-item img {
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 3px;
+  border: solid 1px #dadada;
+}*/
+
 
