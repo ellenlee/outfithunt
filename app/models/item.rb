@@ -2,22 +2,29 @@ class Item < ApplicationRecord
 	# mount_uploader :img, ImgUploader
 
 	belongs_to :brand
-	delegate :name, to: :brand, prefix: true, allow_nil: true
 	belongs_to :color
-	delegate :name, to: :color, prefix: true, allow_nil: true
 	belongs_to :style
-	delegate :name, to: :style, prefix: true, allow_nil: true
 	belongs_to :material
-	delegate :name, to: :material, prefix: true, allow_nil: true
 	belongs_to :category
-	delegate :name, to: :category, prefix: true, allow_nil: true
-
 
 	has_many :outfit_itemships, dependent: :destroy
 	has_many :outfits, through: :outfit_itemships
 
 	has_many :item_imageships, dependent: :destroy
 	has_many :images, through: :item_imageships, dependent: :destroy
+
+	TAGS = ["brand", "color", 'style', 'category', 'material']
+
+	TAGS.each do |tag|
+		define_method "#{tag}_name" do
+			object = tag.capitalize.constantize.includes(:items).where(items: {id: self})
+			if object.present?
+				object.first.name
+			else
+				"-"
+			end
+		end
+	end
 
 	def self.find_by_image_file_name(file_name)
 		self.includes(:images).where(images: {file_path: "items/"+file_name})

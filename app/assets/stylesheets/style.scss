@@ -63,33 +63,51 @@ input[type="submit"].next {
 
 /* common use element */
 
+.flex-center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-top {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .help-block {
   color: #ccc !important ;
   font-size: 7px;
   text-align: center;
 }
 
-.tag_list > li, .tag_list select {
+.tag-list > li, .tag-list select {
   border-radius: 100px;
   background-color: #96d6e0;
   border: 0px;
   color: #fff;
 }
 
-.request_photo {
+.request-photo {
   width: 100vw; height: 80vw;
   background-color: #eee;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  /*display:flex;*/
+  /*align-items:center;*/
+  /*justify-content:center;*/
   overflow: hidden;
 }
 
-.request_photo.stretch {
+.request-photo.stretch {
   height: auto !important ;
 }
 
-.request_photo img {
+.request-photo img {
   width: auto;
   height : auto;
   max-width: 100%;
@@ -111,7 +129,7 @@ input[type="submit"].next {
   color: #fff;
 }
 
-.request_photo input.file{
+.request-photo input.file{
   position: relative; z-index: 100;
   width: 100%;
   height: 60px;
@@ -140,13 +158,7 @@ input[type="submit"].next {
   text-align: center;
 }
 
-.inline-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.inline-input select {
+.tag-list select {
   width: 90px;
   height: 40px;
   padding-left: 25px;
@@ -156,12 +168,9 @@ input[type="submit"].next {
 
 .user-request {
   width: 100vw;
-  /*height: 40px;*/
   display: inline-flex;
-  /*flex-direction:column;*/
   justify-content:space-between;
   align-items: center;
-
 }
 
 .request-item {
@@ -183,13 +192,13 @@ input[type="submit"].next {
   margin: auto auto auto 0;
 }
 
-.tag_list > li {
+.tag-list > li {
   margin: auto 1px;
   padding: 4px 14px;
   font-size: 14px;
 }
 
-.list-outfits {
+.outfits-index {
   width: 100vw;
   height: calc( 100vh - 100px);
   overflow-y: auto;
@@ -201,7 +210,7 @@ input[type="submit"].next {
   align-content: flex-start;
 
 }
-.list-outfits img {
+.outfits-index img {
   margin: 5px;
   width: 80px;
   height: auto;
@@ -219,9 +228,6 @@ img.recommend {
   width: 100vw;
   height: calc((100vh - 48px - 80vw)/2);
   padding: 14px;
-  display: inline-flex;
-  justify-content: space-around;
-  align-items:center;
 }
 
 #request_outfits-show .request-item {
@@ -233,11 +239,18 @@ img.recommend {
   align-items:center;
 }
 
-.request-item img, .items img {
+#item_outfits-show .request-item {
+  width: 80px; height: 80px;
+}
+
+#request_outfits-show .request-item img{
+  height: 66px;
+}
+
+.objects img {
   width: auto;
   height : auto;
-  max-height: 100%;
-  max-width: 66px;
+  max-width: 100%;
 }
 
 .collection {
@@ -250,20 +263,15 @@ img.recommend {
   color: #fff;
 }
 
-.related-items {
+.footer {
   background-color: #0b1647;
   height: calc( (100vh - 48px - 80vw)/2 );
-  width: 100vw;
-  overflow: auto;
-  display: inline-flex;
-  justify-content: center;
-  align-items: flex-start;
   padding-top: 10px;
 }
 
-.items {
-  width: 66px;
-  height: 66px;
+.objects {
+  width: 80px;
+  height: 80px;
   margin-left: 6px;
   border-radius: 3px;
   border: solid 1px #dadada;
@@ -271,13 +279,12 @@ img.recommend {
 
 /* items-show */
 
-#items-show .request_photo {
+#items-show .request-photo {
   height: 200px;
 }
 
 .item-operator {
   background-color: #0b1647;
-  height: calc( (100vh - 48px - 200px)/2 );
   color: #fff;
   font-size: 8px;
   padding: 13px;
@@ -316,27 +323,24 @@ img.recommend {
   font-size: 6px;
 }
 
-.footer {
-  height: calc( (100vh - 48px - 200px)/2 );
-  width: 100vw;
+.related-objects {
   overflow: auto;
 }
 
-.footer h6 {
+.full-width {
+  width: 100vw !important ;
+  background-color: #0b1647;
+}
+
+.related-objects h6 {
   margin-left: 10px;
 }
 
-.related-outfits {
-  width: 100vw;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+#items-show .footer {
+  background-color: #fff;
 }
 
-#items-show .items {
+#items-show .objects {
   overflow: hidden;
 }
 
-#items-show .items img {
-  max-height: none;
-}

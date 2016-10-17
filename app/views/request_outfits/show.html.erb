@@ -1,28 +1,29 @@
-<section class="request_photo">
+<section class="request-photo flex-center">
   <%= image_tag @outfit.image.file_path %>
 </section>
-
-<section class="compare-items">
+<section class="compare-items flex-around">
   <div class="request-item">
     <%= image_tag @request.img.url(:thumb) %>
     <span>=</span>
-    <%= image_tag @related_item.images.first.file_path %>
+    <%= link_to image_tag(@related_item.images.first.file_path) , item_path(@related_item) %>
   </div>
   <div class="collection">
     收藏穿搭
   </div>
 </section>
-<section class="related-items">
-  <% @other_items.each do |item| %>
-    <div class="items">
-      <%= link_to image_tag(item.images.first.file_path), item_path(item) %>
-    </div>
-  <% end %>
+<section class="related-objects full-width flex-center">
+  <div class="footer flex-top">
+    <% @other_items.each do |item| %>
+      <div class="objects flex-center">
+        <%= link_to image_tag(item.images.first.file_path), item_path(item) %>
+      </div>
+    <% end %>
+  </div>
 </section>
 
 <script>
-  $(".request_photo img").click(function(){
+  $(".request-photo img").click(function(){
     console.log("i am clicked!");
-    $(".request_photo").toggleClass('stretch');
+    $(".request-photo").toggleClass('stretch');
   });
 </script>

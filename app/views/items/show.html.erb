@@ -1,4 +1,4 @@
-<section class="request_photo">
+<section class="request-photo flex-center">
   <%= image_tag @item.images.first.file_path %>
 </section>
 <section class="item-operator">
@@ -15,12 +15,12 @@
     <span class="btn">放入購物車</span>
   </div>
 </section>
-<section class="footer">
+<section class="related-objects">
   <h6>類似款穿搭</h6>
-  <div class="related-outfits">
+  <div class="footer flex-top">
     <% @item.outfits.each do |outfit| %>
-      <div class="items">
-        <%= link_to image_tag(outfit.image.file_path), item_outfits_path(@item) %>
+      <div class="objects flex-center">
+        <%= link_to image_tag(outfit.image.file_path), item_outfit_path(@item, outfit) %>
       </div>
     <% end %>
   </div>
@@ -28,8 +28,8 @@
 
 
 <script>
-  $(".request_photo img").click(function(){
+  $(".request-photo img").click(function(){
     console.log("i am clicked!");
-    $(".request_photo").toggleClass('stretch');
+    $(".request-photo").toggleClass('stretch');
   });
 </script>
