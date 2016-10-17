@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "/guide/item/show" => "guide#item_show"
 
 
-  root "guide#index"
+  root "requests#new"
 
   namespace :console do
     resources :items do

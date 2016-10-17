@@ -1,6 +1,7 @@
 class Console::IndexController < ApplicationController
-	def index
-		
+	layout 'console'
+  def index
+
 	end
 
 end

@@ -1,5 +1,7 @@
 class Console::OutfitsController < ApplicationController
-    def index
+  layout 'console'
+
+  def index
     @outfits = Outfit.all
   end
 

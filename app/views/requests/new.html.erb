@@ -1,24 +1,30 @@
-<h3>輸入屬性</h3>
-
 <%= simple_form_for @request, wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
 
   <div class="request_photo">
-    在此上傳照片<br>
-    <div class="img-show" style="display: none">
-      <img id="thumbnil" width="200px" src="" alt="image"/>
+    <div class="img-show">
+      <img id="thumbnil" src="" alt="image"/>
     </div>
-
-    <%= f.input :img, input_html: {accept: "image/*",  onchange: "showMyImage(this)"} %>
-  
+    <div class="fileUpload btn">
+      <%= f.input :img, label: false, input_html: {accept: "image/*",  onchange: "showMyImage(this)"} %>
+      <span class="fileUploadIcon">開啟相簿</span>
+    </div>
   </div>
-
-  <%= f.input :color_id, collection: Color.all, prompt: "選擇顏色", required: true %>
-  <%= f.input :material_id, collection: Material.all, prompt: "選擇材質", required: true  %>
-  <%= f.input :category_id, collection: Category.all, prompt: "選擇種類", required: true  %>
-		<br><br>
+  <div class="caution">
+    使用至少<span style="color: #fff">3個標籤</span>來描述這件單品
+  </div>
+  <div class="inline-input">
+    <%= f.input :color_id, collection: Color.all, prompt: "顏色", required: true, input_html: {class: "tags"} %>
+    <%= f.input :material_id, collection: Material.all, prompt: "材質", required: true, input_html: {class: "tags"}  %>
+    <%= f.input :category_id, collection: Category.all, prompt: "種類", required: true, input_html: {class: "tags"}  %>
+  </div>
+    <br><br>
   <div class="form-group">
-	  <%= f.button :submit, "確定", class: "btn-primary" %>
+    <%= f.button :submit, "幫我找", class: "next" %>
   </div>
 <% end %>
+
+<script>
+
+</script>
 
 

@@ -6,11 +6,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
-    <%= render partial: "layouts/nav_bar" %>
+  <body>
+	  <%= render :partial => 'layouts/nav' %>
     <%= yield %>
   </body>
 </html>
