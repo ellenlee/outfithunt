@@ -1,8 +1,16 @@
+/* whole site page */
+
 body {
   margin-top: 48px;
   padding: 0px;
   background-color: #fff;
   color: #9b9b9b;
+}
+
+#main-frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body#requests-new {
@@ -12,12 +20,6 @@ body#requests-new {
 .alert {
   padding: 5px;
   margin-top : 10px;
-}
-
-.help-block {
-  color: #ccc !important ;
-  font-size: 7px;
-  text-align: center;
 }
 
 /* header */
@@ -58,6 +60,22 @@ input[type="submit"].next {
   color: #fff;
   font-size: 18px;
 }
+
+/* common use element */
+
+.help-block {
+  color: #ccc !important ;
+  font-size: 7px;
+  text-align: center;
+}
+
+.tag_list > li, .tag_list select {
+  border-radius: 100px;
+  background-color: #96d6e0;
+  border: 0px;
+  color: #fff;
+}
+
 
 /* requests-new */
 
@@ -120,14 +138,10 @@ input[type="submit"].next {
   justify-content: space-around;
 }
 
-.inline-input select.tags {
+.inline-input select {
   width: 90px;
   height: 40px;
-  border-radius: 100px;
-  background-color: #96d6e0;
-  border: 0px;
   padding-left: 25px;
-  color: #fff;
 }
 
 /* request_outfits-index */
@@ -135,7 +149,6 @@ input[type="submit"].next {
 .user-request {
   width: 100vw;
   /*height: 40px;*/
-  background-color: yellow;
   display: inline-flex;
   /*flex-direction:column;*/
   justify-content:space-between;
@@ -147,7 +160,6 @@ input[type="submit"].next {
   width: 50px;
   height: 50px;
   padding: 7px;
-  background-color: gray;
 }
 .user-request img {
   width: auto;
@@ -159,7 +171,41 @@ input[type="submit"].next {
 }
 
 .user-request ul {
-  border: 1px solid red;
-  margin: auto;
+  margin: auto auto auto 0;
+}
+
+.tag_list > li {
+  margin: auto 1px;
+  padding: 4px 14px;
+  font-size: 14px;
+}
+
+.rectangle-copy-15 {
+  width: 122.5px;
+  height: 135.7px;
+}
+
+.list-outfits {
+  width: 100vw;
+  height: calc( 100vh - 100px);
+  overflow-y: auto;
+  padding: 3px;
+  display: inline-flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+}
+.list-outfits img {
+  margin: 5px;
+  width: 80px;
+  height: auto;
+  border-radius: 3px;
+}
+
+img.recommend {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+  border: solid 1px #9b9b9b;
 }
 

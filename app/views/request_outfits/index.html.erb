@@ -1,13 +1,24 @@
-<h3>搜尋穿搭</h3>	
+<div class="user-request">
+  <div class="request-img">
+    <%= image_tag @request.img.url(:thumb) %>
+  </div>
+  <ul class="list-inline tag_list">
+    <li><%= @request.color.name %></li>
+    <li><%= @request.material.name %></li>
+    <li><%= @request.category.name %></li>
+    <li>style</li>
+  </ul>
+</div>
+<div class="list-outfits">
+  <% @outfits.each do |outfit| %>
+  	<%= link_to (image_tag outfit.image_url, height: '60px'), request_outfit_path(@request, outfit) %>
+  <% end %>
+</div>
 
-<%= image_tag @request.img.url(:thumb), style: "border: 1px solid #ccc" %>
-<ul>
-	<li><%= @request.color.name %></li>
-	<li><%= @request.material.name %></li>
-	<li><%= @request.category.name %></li>
-</ul>
-<hr>
-
-<% @outfits.each do |outfit| %>
-	<p><%= link_to outfit.name, request_outfit_path(@request, outfit) %></p>
-<% end %>
+<script>
+  $(".list-outfits img").eq(0).addClass("recommend");
+  $(".list-outfits img").eq(3).addClass("recommend");
+  $(".list-outfits img").eq(5).addClass("recommend");
+  $(".list-outfits img").eq(8).addClass("recommend");
+  $(".list-outfits img").eq(-1).addClass("recommend");
+</script>

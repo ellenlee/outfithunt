@@ -10,7 +10,9 @@
   </head>
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
-    <%= render partial: "layouts/nav_bar" %>
-    <%= yield %>
+    <div id="main-frame">
+      <%= render partial: "layouts/nav_bar" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
