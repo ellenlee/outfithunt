@@ -1,3 +1,9 @@
+/* hide */
+
+.hide {
+  display: none;
+}
+
 /* size */
 
 .full-width {
@@ -65,20 +71,18 @@
 
 .alert {
   padding: 5px;
-  margin-top : 10px;
+  margin : 0px;
+  border-radius: 0px;
+  background-color: transparent !important;
+  border: 0px !important;
+  text-align: center;
+  color: #d23076;
 }
 
 .help-block {
   color: #ccc !important ;
   font-size: 7px;
   text-align: center;
-}
-
-.tag-list > li, .tag-list select {
-  border-radius: 100px;
-  background-color: #96d6e0;
-  border: 0px;
-  color: #fff;
 }
 
 .request-photo {

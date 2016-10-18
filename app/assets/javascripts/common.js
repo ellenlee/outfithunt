@@ -7,7 +7,6 @@ function showMyImage(fileInput) {
       if (!file.type.match(imageType)) {
           continue;
       }
-      console.log('x');
       var img=document.getElementById("thumbnil");
       img.file = file;
       var reader = new FileReader();
@@ -18,6 +17,13 @@ function showMyImage(fileInput) {
       })(img);
       reader.readAsDataURL(file);
   }
-  $('.img-show').toggle('show');
+  $('.img-show').removeClass('hide');
   $('.fileUpload').toggle('hide');
 };
+
+$(document).on('turbolinks:load', function(){
+  $(".request-photo img").click(function(){
+      console.log("i am clicked!");
+      $(".request-photo").toggleClass('stretch');
+    });
+});
