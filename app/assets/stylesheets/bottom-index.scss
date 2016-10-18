@@ -1,0 +1,32 @@
+.related-objects {
+  overflow: auto;
+}
+
+.footer {
+  height: calc( (100vh - 48px - 80vw)/2 );
+  padding-top: 10px;
+}
+
+.objects img {
+  width: auto;
+  height : auto;
+  max-width: 100%;
+}
+
+.related-objects h6 {
+  margin-left: 10px;
+}
+
+#items-show .footer {
+  background-color: #fff;
+}
+
+#items-show .objects {
+  overflow: hidden;
+}
+
+.objects {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+}

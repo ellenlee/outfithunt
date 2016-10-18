@@ -1,19 +1,19 @@
-<section class="request-photo flex-center">
+<section class="request-photo flex-center overflow-hidden">
   <%= image_tag @outfit.image.file_path %>
 </section>
 
-<section class="compare-items flex-around">
-  <div class="request-item">
-    <%= link_to image_tag(@related_item.images.first.file_path) , item_path(@related_item) %>
+<section class="compare-items flex-around middle-section">
+  <div class="focus-item flex-center">
+    <%= link_to image_tag(@related_item.images.first.file_path) , item_path(@related_item), class: "bordered" %>
   </div>
   <div class="collection">
     收藏穿搭
   </div>
 </section>
-<section class="related-objects full-width flex-center">
+<section class="related-objects full-width flex-center dark-bg">
   <div class="footer flex-top">
     <% @other_items.each do |item| %>
-      <div class="objects">
+      <div class="objects flex-center bordered">
         <%= link_to image_tag(item.images.first.file_path), item_path(item) %>
       </div>
     <% end %>

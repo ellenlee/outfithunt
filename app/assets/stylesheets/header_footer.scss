@@ -1,0 +1,39 @@
+
+/* header */
+
+nav.header-bar {
+  position: fixed;
+  top: 0; left:0;
+  width: 100vw;
+  height: 48px;
+  /*-webkit-backdrop-filter: blur(10px);*/
+  /*backdrop-filter: blur(10px);*/
+  background-color: #0b1647;
+  color: #fff;
+}
+
+nav.header-bar .back {
+  font-size: 13px;
+  line-height: 48px;
+}
+
+nav.header-bar .cancel {
+  position: fixed;
+  top: -2px; right: 15px;
+  line-height: 48px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+/* footer */
+
+input[type="submit"].next {
+  position: fixed;
+  bottom: 0;
+  border: 0px;
+  width: 100vw;
+  height: 40px;
+  background-color: #d23076;
+  color: #fff;
+  font-size: 18px;
+}
