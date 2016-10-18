@@ -1,7 +1,7 @@
 <%= simple_form_for @request, wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
 
   <div class="request-photo flex-center overflow-hidden">
-    <div class="img-show">
+    <div class="img-show flex-center hide">
       <img id="thumbnil" src="" alt="image"/>
     </div>
     <div class="fileUpload btn">
@@ -12,11 +12,15 @@
   <div class="caution">
     使用至少<span style="color: #fff">3個標籤</span>來描述這件單品
   </div>
-  <div class="tag-list flex-around">
-    <%= f.input :color_id, collection: Color.all, prompt: "顏色", required: true %>
-    <%= f.input :material_id, collection: Material.all, prompt: "材質", required: true %>
-    <%= f.input :category_id, collection: Category.all, prompt: "種類", required: true %>
-  </div>
+  <section class="tag-area">
+    <div class="tag-list">
+      <%= f.input :color_id, collection: Color.all, prompt: "顏色" %>
+      <%= f.input :material_id, collection: Material.all, prompt: "材質" %>
+      <%= f.input :category_id, collection: Category.all, prompt: "種類" %>
+      <%= f.input :style_id, collection: Style.all, prompt: "風格" %>
+    </div>
+
+  </section>
   <div class="form-group">
     <%= f.button :submit, "幫我找", class: "next" %>
   </div>

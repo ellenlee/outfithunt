@@ -3,9 +3,10 @@
     <%= image_tag @request.img.url(:thumb) %>
   </div>
   <ul class="tag-list list-inline">
-    <li><%= @request.color.name %></li>
-    <li><%= @request.material.name %></li>
-    <li><%= @request.category.name %></li>
+    <li><%= t(@request.color_name, scope: 'tags') %></li>
+    <li><%= t(@request.material_name, scope: 'tags') %></li>
+    <li><%= t(@request.category_name, scope: 'tags') %></li>
+    <li><%= t(@request.style_name, scope: 'tags') %></li>
   </ul>
 </div>
 <div class="outfits-index">
