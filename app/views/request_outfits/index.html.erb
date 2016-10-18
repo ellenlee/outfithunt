@@ -3,10 +3,10 @@
     <%= image_tag @request.img.url(:thumb) %>
   </div>
   <ul class="tag-list list-inline">
-    <li><%= t(@request.color_name, scope: 'tags') %></li>
-    <li><%= t(@request.material_name, scope: 'tags') %></li>
-    <li><%= t(@request.category_name, scope: 'tags') %></li>
-    <li><%= t(@request.style_name, scope: 'tags') %></li>
+    <li class="color"><%= @request.color_name %></li>
+    <li class="material"><%= @request.material_name %></li>
+    <li class="category"><%= @request.category_name %></li>
+    <li class="style"><%= @request.style_name %></li>
   </ul>
 </div>
 <div class="outfits-index">
@@ -16,6 +16,19 @@
 </div>
 
 <script>
+  <% if @request.style_name == t('style', scope: "tags") %>
+    $('.style').css("background-color","#ccc");
+  <% end %>
+  <% if @request.material_name == t('material', scope: "tags") %>
+    $('.material').css("background-color","#ccc");
+  <% end %>
+  <% if @request.color_name == t('color', scope: "tags") %>
+    $('.color').css("background-color","#ccc");
+  <% end %>
+  <% if @request.category_name == t('category', scope: "tags") %>
+    $('.category').css("background-color","#ccc");
+  <% end %>
+
   $(".outfits-index img").eq(0).addClass("shadow");
   $(".outfits-index img").eq(3).addClass("shadow");
   $(".outfits-index img").eq(5).addClass("shadow");

@@ -38,12 +38,13 @@
 .caution {
   font-size: 7px;
   margin-top: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .tag-area {
   width: 100vw;
+  height: calc(100vh - 48px - 80vw - 40px);
   overflow: hidden;
   display: inline-flex;
   justify-content: center;
@@ -65,5 +66,16 @@
   background-color: #96d6e0;
   color: #fff;
   border: 0px;
+}
+
+input[type="submit"].next {
+  position: fixed;
+  bottom: 0;
+  border: 0px;
+  width: 100vw;
+  height: 40px;
+  background-color: #d23076;
+  color: #fff;
+  font-size: 18px;
 }
 

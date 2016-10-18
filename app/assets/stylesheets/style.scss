@@ -45,9 +45,17 @@ body#requests-new, body#requests-create{
 }
 
 .tag-list > li {
+  border-radius: 100px;
+  background-color: #96d6e0;
+  border: 0px;
+  color: #fff;
   margin: auto 1px;
   padding: 4px 14px;
   font-size: 14px;
+}
+
+.not_find {
+  background-color: #ccc;
 }
 
 .outfits-index {

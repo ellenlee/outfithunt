@@ -6,9 +6,14 @@ class RequestsController < ApplicationController
 	def create
 		@request = current_user.requests.build(request_params)
 
-		if @request.save
-			redirect_to request_outfits_path(@request), notice: "新增成功！"
+		if @request.check_tags_sufficient(request_params)
+			if @request.save
+				redirect_to request_outfits_path(@request)
+			else
+				render "new"
+			end
 		else
+			flash[:alert] = "標籤至少要 3 個以上哦！"
 			render "new"
 		end
 	end

@@ -1,4 +1,4 @@
-<section class="request-photo flex-center">
+<section class="request-photo flex-center overflow-hidden">
   <%= image_tag @item.images.first.file_path %>
 </section>
 <section class="item-operator">
@@ -25,11 +25,3 @@
     <% end %>
   </div>
 </section>
-
-
-<script>
-  $(".request-photo img").click(function(){
-    console.log("i am clicked!");
-    $(".request-photo").toggleClass('stretch');
-  });
-</script>

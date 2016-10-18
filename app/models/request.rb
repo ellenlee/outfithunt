@@ -13,12 +13,29 @@ class Request < ApplicationRecord
 
   TAGS.each do |tag|
     define_method "#{tag}_name" do
-      object = tag.capitalize.constantize.includes(:items).where(items: {id: self})
+      object = tag.capitalize.constantize.includes(:requests).where(requests: {id: self})
       if object.present?
         object.first.name
       else
-        "#{tag}"
+        I18n.t("#{tag}", scope: 'tags')
       end
     end
   end
+
+  # def check_attribute_present(tag)
+  #   object = tag.capitalize.constantize.includes(:requests).where(requests: {id: self})
+  #   object.present?
+  # end
+
+  def check_tags_sufficient(params)
+    arr = []
+    TAGS.each do |tag|
+      if params["#{tag}_id"].length > 0
+        arr << params["#{tag}_id"]
+      end
+    end
+    arr.compact!
+    arr.length >= 3
+  end
+
 end
