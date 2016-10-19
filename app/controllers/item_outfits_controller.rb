@@ -7,6 +7,7 @@ class ItemOutfitsController < ApplicationController
 
   def show
     @outfit = Outfit.find(params[:id])
+    @occasions = @outfit.occasions
     @items = @outfit.items
     @related_item = @item
     @other_items = @outfit.items.where.not(id: @related_item)
