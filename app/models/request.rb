@@ -27,6 +27,7 @@ class Request < ApplicationRecord
   #   object.present?
   # end
 
+
   def check_tags_sufficient(params)
     arr = []
     TAGS.each do |tag|

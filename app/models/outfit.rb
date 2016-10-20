@@ -15,10 +15,15 @@ class Outfit < ApplicationRecord
 	has_many :brands, through: :items
 
 	def related_item(request)
-		item = self.items.where(color: request.color, material: request.material, category: request.category)
+		item = self.items.where(color: request.color, category: request.category)
 		if item.present?
 			item.first
 		end
+	end
+
+	def self.related_list(request)
+		items = Item.generate_lists_by_tags(request)
+		outfits = Outfit.includes(:items).where( items: { id: items })
 	end
 
 	def image_url

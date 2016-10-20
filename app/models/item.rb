@@ -26,6 +26,47 @@ class Item < ApplicationRecord
 		end
 	end
 
+	def self.generate_lists_by_tags(request)
+		color = request.color
+		category = request.category
+		style = request.style
+		material = request.material
+
+		items = []
+
+		items_1st_list = []
+		items_2nd_list = []
+		items_3rd_list = []
+		items_4th_list = []
+
+		related_items = Item.where("color_id = ? or category_id =? or style_id =? or material_id =?", color, category, style, material)
+
+		related_items.each do |item|
+			# 全符合的
+			if item.color == color && item.category == category && item.style == style && item.material == material
+				items_1st_list << item
+
+			# 顏色/種類/風格 三者符合的
+			elsif item.color == color && item.category == category && item.style == style
+				items_2nd_list << item
+
+			# 顏色/種類 兩者符合的
+			elsif item.color == color && item.category == category
+				items_3rd_list << item
+			# 任一條件符合的
+			else
+				items_4th_list << item
+			end
+		end
+
+		items_1st_list.each { |item| items << item }
+		items_2nd_list.each { |item| items << item }
+		items_3rd_list.each { |item| items << item }
+		items_4th_list.each { |item| items << item }
+
+		items
+	end
+
 	def self.find_by_image_file_name(file_name)
 		self.includes(:images).where(images: {file_path: "items/"+file_name})
 	end
