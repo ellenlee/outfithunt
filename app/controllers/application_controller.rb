@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate
   before_action :authenticate_user!
 
-
   protected
   def authenticate
     authenticate_or_request_with_http_basic do |user_name, password|
