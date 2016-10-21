@@ -17,6 +17,27 @@ nav.header-bar .back {
   line-height: 48px;
 }
 
+
+nav.header-bar .menu {
+  position: fixed;
+  top: 0px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+nav.header-bar .menu img {
+  width: 30px;
+  /*border: #eee 1px solid;*/
+  /*border-radius: 3px;*/
+  padding: 4px;
+  margin: 0;
+}
+
+
+/* cancel-element */
+
 nav.header-bar .cancel {
   position: fixed;
   top: -2px; right: 15px;
@@ -25,5 +46,4 @@ nav.header-bar .cancel {
   font-weight: 900;
 }
 
-/* footer */
 

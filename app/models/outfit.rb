@@ -14,6 +14,9 @@ class Outfit < ApplicationRecord
 	has_many :styles, through: :items
 	has_many :brands, through: :items
 
+	has_many :collections, dependent: :destroy
+  has_many :collected_outfits, through: :collections, source: :user
+
 	def related_item(request)
 		item = self.items.where(color: request.color, material: request.material, category: request.category)
 		if item.present?

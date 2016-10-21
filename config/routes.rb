@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :items, only: :show do
     resources :outfits, controller: 'item_outfits'
   end
+  resources :users do
+    get :profile, on: :member
+  end
+  resources :collections, only: [:destroy, :create]
 
   get "/guide" => "guide#index"
   get "/guide/request" => "guide#request"

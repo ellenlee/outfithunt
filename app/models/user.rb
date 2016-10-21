@@ -5,10 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :requests
+  has_many :collections, dependent: :destroy
+  has_many :collected_outfits, through: :collections, source: :outfit
 
   include Flyable
 
   def admin?
   	self.role == "admin"
+  end
+
+  def collected_outfits?(outfit)
+    self.collected_outfits.include?(outfit)
   end
 end

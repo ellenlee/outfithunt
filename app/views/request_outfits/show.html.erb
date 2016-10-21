@@ -7,9 +7,7 @@
     <span>=</span>
     <%= link_to image_tag(@related_item.images.first.file_path) , item_path(@related_item), class: "bordered" %>
   </div>
-  <div class="collection">
-    收藏穿搭
-  </div>
+  <%= render partial: "users/collected_btn" %>
 </section>
 <section class="related-objects full-width flex-center dark-bg">
   <div class="footer flex-top">

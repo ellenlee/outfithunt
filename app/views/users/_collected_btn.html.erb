@@ -1,0 +1,11 @@
+<div class="collect_btn">
+  <% if current_user.collected_outfits?(@outfit) %>
+      <%= link_to collection_path(@outfit), method: :delete, remote: true do %>
+        <div class="collection">已收藏</div>
+      <% end %>
+  <% else %>
+    <%= link_to collections_path(id: params[:id]), method: :post, remote: true do %>
+      <div class="collection">收藏穿搭</div>
+    <% end %>
+  <% end %>
+</div>
