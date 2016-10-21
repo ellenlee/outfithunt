@@ -2,11 +2,13 @@ class RequestOutfitsController < ApplicationController
 	before_action :set_request
 
 	def index
-		@outfits = Outfit.includes(:items).where( items: {color: @request.color, material: @request.material, category: @request.category })
+		# @outfits = Outfit.related_list(@request)
+		@outfits = Outfit.includes(:items).where( items: {color: @request.color, category: @request.category })
 	end
 
 	def show
  		@outfit = Outfit.find(params[:id])
+ 		@occasions = @outfit.occasions
  		@items = @outfit.items
  		@related_item = @outfit.related_item(@request)
  		@other_items = @outfit.items.where.not(id: @related_item)

@@ -1,6 +1,17 @@
 <section class="request-photo flex-center overflow-hidden">
   <%= image_tag @outfit.image.file_path %>
 </section>
+
+<section class="occasion-area">
+  <div class="occasions-tag flex-center">
+    <% @occasions.each do |occasion| %>
+      <div class="occasion flex-center">
+        <%= occasion.name %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
 <section class="compare-items flex-around middle-section">
   <div class="focus-item">
     <%= image_tag @request.img.url(:thumb) %>

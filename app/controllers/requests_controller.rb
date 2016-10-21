@@ -13,7 +13,7 @@ class RequestsController < ApplicationController
 				render "new"
 			end
 		else
-			flash[:alert] = "標籤至少要 3 個以上哦！"
+			flash[:notice] = "標籤至少要 3 個以上哦！"
 			render "new"
 		end
 	end

@@ -11,11 +11,11 @@ RailsAdmin.config do |config|
   # ## == Cancan ==
   # # config.authorize_with :cancan
 
-  config.authorize_with do
-    unless current_user.admin?
-      raise ActiveRecord::RecordNotFound
-    end
-  end
+  # config.authorize_with do
+  #   unless current_user.admin?
+  #     raise ActiveRecord::RecordNotFound
+  #   end
+  # end
 
   ## == Pundit ==
   # config.authorize_with :pundit

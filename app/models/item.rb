@@ -26,6 +26,20 @@ class Item < ApplicationRecord
 		end
 	end
 
+	def self.generate_lists_by_tags(request)
+		items ={1=>[],2=>[],3=>[],4=>[]}
+
+		related_items = Item.where("color_id = ? or category_id =? or style_id =? or material_id =?", color, category, style, material)
+		related_items.each do |item|
+			n = 0
+			n += 1 if item.color == request.color
+			n += 1 if item.category == request.category
+			n += 1 if item.style == request.style
+			n += 1 if item.material == request.material
+			items[n] << item
+		end
+	end
+
 	def self.find_by_image_file_name(file_name)
 		self.includes(:images).where(images: {file_path: "items/"+file_name})
 	end
