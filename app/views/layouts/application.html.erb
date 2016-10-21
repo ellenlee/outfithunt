@@ -11,7 +11,8 @@
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
     <div id="main-frame">
-      <%= render partial: "layouts/nav_bar" %>
+      <%= render "layouts/nav_bar" %>
+      <%= render "layouts/flash" %>
       <%= yield %>
     </div>
   </body>

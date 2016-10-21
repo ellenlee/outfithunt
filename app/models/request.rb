@@ -28,15 +28,14 @@ class Request < ApplicationRecord
   # end
 
 
-  def check_tags_sufficient(params)
-    arr = []
-    TAGS.each do |tag|
-      if params["#{tag}_id"].length > 0
-        arr << params["#{tag}_id"]
-      end
-    end
-    arr.compact!
-    arr.length >= 3
+  def check_tags_sufficient
+    tag_count = 0
+    tag_count += 1 if self.color.present?
+    tag_count += 1 if self.category.present?
+    tag_count += 1 if self.style.present?
+    tag_count += 1 if self.material.present?
+
+    tag_count >= 3
   end
 
 end
