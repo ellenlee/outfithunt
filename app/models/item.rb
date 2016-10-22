@@ -26,10 +26,19 @@ class Item < ApplicationRecord
 		end
 	end
 
-	def self.generate_lists_by_tags(request)
-		items ={1=>[],2=>[],3=>[],4=>[]}
+	def self.related_item(request)
+		Item.where("color_id = ? or category_id =? or style_id =? or material_id =?", request.color, request.category, request.style, request.material)
+	end
 
-		related_items = Item.where("color_id = ? or category_id =? or style_id =? or material_id =?", color, category, style, material)
+	def self.related_list_by_tags(request)
+		items = {
+			4=>[],
+			3=>[],
+			2=>[],
+			1=>[],
+		}
+
+		related_items = Item.related_item(request)
 		related_items.each do |item|
 			n = 0
 			n += 1 if item.color == request.color
@@ -38,6 +47,9 @@ class Item < ApplicationRecord
 			n += 1 if item.material == request.material
 			items[n] << item
 		end
+		item_list = Array.new
+		items.each_value { |item| item_list += item }
+		item_list
 	end
 
 	def self.find_by_image_file_name(file_name)

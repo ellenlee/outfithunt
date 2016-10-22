@@ -1,0 +1,24 @@
+.my_request {
+  overflow: auto;
+  height: 200px;
+}
+
+.object-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my_request .profile-index-img {
+  overflow: hidden;
+  width: 140px;
+  height: 140px;
+  margin-right: 10px;
+}
+
+.my_request img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}

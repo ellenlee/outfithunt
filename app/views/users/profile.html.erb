@@ -1,11 +1,16 @@
-<h3><%= current_user.email %></h3>
+<div class="my_request dark-bg flex-center">
+  <div class="object-index">
+    <% @requests.each do |request| %>
+      <div class="profile-index-img flex-center">
+        <%= image_tag request.img.url(:medium) %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<h4>我上傳的衣服</h4>
-<% @requests.each do |request| %>
-  <%= image_tag request.img.url(:thumb), width: '40px' %>
-<% end %>
 
 <h4>我收藏的穿搭</h4>
 <% @outfits.each do |outfit| %>
   <%= image_tag outfit.image.file_path, width: '40px' %>
 <% end %>
+

@@ -18,15 +18,19 @@ class Outfit < ApplicationRecord
   has_many :collected_outfits, through: :collections, source: :user
 
 	def related_item(request)
-		item = self.items.where(color: request.color, category: request.category)
+		item = self.items.related_item(request)
 		if item.present?
 			item.first
 		end
 	end
 
 	def self.related_list(request)
-		items = Item.generate_lists_by_tags(request)
-		outfits = Outfit.includes(:items).where( items: { id: items })
+		items = Item.related_list_by_tags(request)
+		outfits = []
+		items.each do |item|
+			outfits += item.outfits
+		end
+		outfits.uniq!
 	end
 
 	def image_url
