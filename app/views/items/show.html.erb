@@ -6,14 +6,16 @@
     <p><%= @item.brand_name %><br>
     <%= @item.name %></p>
     <h5 class="price">NT. <%= @item.price %></h5>
-    <div class="size-and-quantity">
-      <div>尺寸</div>
-      <div>數量</div>
-    </div>
   </div>
-  <div class="put-in-cart btn">
-    <%= image_tag image_url('icons/icon_cart.png')%>
-    <span>放入購物車</span>
+  <div class="flex-between", style="width: 100%">
+    <div class="size-and-quantity">
+      <%= select_tag :size, options_for_select(['尺寸','XS','S','M','L','XL','XLL']), {class: "arrow"} %>
+      <%= select_tag :quantity, options_for_select(['數量',1,2,3,4,5,6,7,8,9,10]), {class: "arrow"} %>
+    </div>
+    <div class="put-in-cart btn">
+      <%= image_tag image_url('icons/icon_cart.png')%>
+      <span>放入購物車</span>
+    </div>
   </div>
 </section>
 <%= render "layouts/outfit_index" %>

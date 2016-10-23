@@ -171,9 +171,6 @@ img.heart {
   font-size: 8px;
   padding: 13px;
   font-weight: 300;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 .item-operator p {
@@ -217,5 +214,12 @@ img.heart {
   font-size: 6px;
 }
 
-
+.size-and-quantity select {
+  width: 67px;
+  height: 36px;
+  margin-right: 12px;
+  padding-left: 12px;
+  border: solid 1px #ffffff;
+  background-color: transparent;
+}
 
