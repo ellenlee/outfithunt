@@ -6,11 +6,12 @@ nav.header-bar {
   top: 0; left:0;
   width: 100vw;
   height: 48px;
-  background-color: #4a4a4a;
   color: #fff;
+  z-index: 999;
 }
 
 nav.header-bar .back {
+  position: fixed;
   font-size: 13px;
   line-height: 48px;
 }
@@ -38,7 +39,16 @@ nav.header-bar .menu img {
   margin: 0;
 }
 
+/* header #my shelf */
 
+.shelf {
+  background-color: #de9ca5;
+}
+
+.title {
+  width: 100%;
+  height: 100%;
+}
 /* cancel-element */
 
 nav.header-bar .cancel {

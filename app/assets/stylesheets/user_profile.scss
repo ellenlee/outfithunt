@@ -1,24 +1,63 @@
-.my_request {
+.my-requests {
   overflow: auto;
   height: 200px;
+  position: fixed;
+  z-index: 500;
 }
 
-.object-index {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.my_request .profile-index-img {
+.my-requests .profile-index-img {
   overflow: hidden;
   width: 140px;
   height: 140px;
   margin-right: 10px;
 }
 
-.my_request img {
+.my-requests img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100%;
+}
+
+.my-outfits {
+  margin-top: 200px;
+  height: calc( 100vh - 200px - 48px);
+  overflow: auto;
+  padding-top: 12px;
+  /*-webkit-column-count: 2;*/
+  /*-moz-column-count: 2;*/
+  /*column-count: 2;*/
+  /*text-align: center;*/
+}
+
+.my-outfits .column {
+  width: calc( (100vw - 24px)/2 );
+}
+
+.outfit-frame {
+  width: 100%;
+  /*margin: 10px auto 0 auto;*/
+  overflow: hidden;
+  border-radius: 5px;
+  /*display: inline-flex;*/
+}
+
+.outfit-frame img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.line-1st {
+  /*background-color: yellow;*/
+  position: absolute;
+  left: 12px;
+  padding-right: 6px;
+}
+
+.line-2nd {
+  /*background-color: gray;*/
+  position: absolute;
+  right: 12px;
+  padding-left: 6px;
 }

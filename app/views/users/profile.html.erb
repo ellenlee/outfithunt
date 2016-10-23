@@ -1,16 +1,27 @@
-<div class="my_request dark-bg flex-center">
-  <div class="object-index">
+<section class="my-requests dark-bg full-width flex-center">
+  <div class="flex-center">
     <% @requests.each do |request| %>
       <div class="profile-index-img flex-center">
         <%= image_tag request.img.url(:medium) %>
       </div>
     <% end %>
   </div>
-</div>
+</section>
 
-
-<h4>我收藏的穿搭</h4>
-<% @outfits.each do |outfit| %>
-  <%= image_tag outfit.image.file_path, width: '40px' %>
-<% end %>
+<section class="my-outfits full-width">
+  <div class="column line-1st">
+    <% @outfits_odd.each do |outfit| %>
+      <div class="outfit-frame">
+        <%= image_tag outfit.image.file_path, class: "" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="column line-2nd">
+    <% @outfits_even.each do |outfit| %>
+      <div class="outfit-frame ">
+        <%= image_tag outfit.image.file_path, class: "" %>
+      </div>
+    <% end %>
+  </div>
+</section>
 
