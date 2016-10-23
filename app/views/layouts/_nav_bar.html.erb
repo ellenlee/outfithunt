@@ -1,4 +1,7 @@
 <nav class="header-bar">
-  <div class="back"> 〈 Back</div>
-  <div class="menu"><%= link_to (image_tag image_url("menu.png")), profile_user_path(current_user) %></div>
+  <div class="back">
+    <%= link_to (image_tag image_url("icons/icon_next.png")), destroy_user_session_path, :method => :delete %>
+  </div>
+  <div class="menu">
+  <%= link_to (image_tag image_url("icons/icon_my_closet.png")), profile_user_path(current_user) %></div>
 </nav>

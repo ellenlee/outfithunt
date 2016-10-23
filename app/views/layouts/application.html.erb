@@ -11,8 +11,10 @@
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
     <div id="main-frame">
-      <%= render "layouts/nav_bar" %>
-      <%= render "layouts/flash" %>
+      <% if current_user.present? %>
+        <%= render "layouts/nav_bar" %>
+        <%= render "layouts/flash" %>
+      <% end %>
       <%= yield %>
     </div>
   </body>

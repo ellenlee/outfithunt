@@ -1,28 +1,79 @@
 <%= simple_form_for @request, wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
 
-  <section class="request-photo flex-center overflow-hidden">
+  <section class="img-area flex-center overflow-hidden">
     <div class="img-show flex-center hide">
-      <img id="thumbnil" src="" alt="image"/>
-    </div>
-    <div class="fileUpload btn">
-      <%= f.input :img, label: false, input_html: {accept: "image/*",  onchange: "showMyImage(this)"} %>
-      <span class="fileUploadIcon">開啟相簿</span>
+      <img id="thumbnil" src="" alt="image" class="img-auto-width" />
     </div>
   </section>
 
-  <div class="caution">
-    使用至少<span style="color: #fff">3個標籤</span>來描述這件單品
-  </div>
-  <section class="tag-area">
-    <div class="tag-list">
-      <%= f.input :color_id, collection: Color.all, prompt: "顏色" %>
-      <%= f.input :material_id, collection: Material.all, prompt: "材質" %>
-      <%= f.input :category_id, collection: Category.all, prompt: "種類" %>
-      <%= f.input :style_id, collection: Style.all, prompt: "風格" %>
+  <section class="oprate-area dark-bg">
+
+    <div class="upload-photo flex-center">
+      <div class="upload-buttons flex-center">
+        <div class="open-camera opt">
+          <div class="icons flex-center">
+            <%= image_tag image_url("icons/icon_camera.png") %>
+          </div>
+          <span>使用相機</span>
+        </div>
+        <div class="open-album opt">
+          <div class="icons flex-center"><%= image_tag image_url("icons/icon_album.png") %></div>
+          <span>打開相簿</span>
+        </div>
+        <%= f.input :img, label: false, input_html: {accept: "image/*",  onchange: "showMyImage(this)"} %>
+      </div>
+    </div>
+
+    <div class="select-tag hide">
+      <div class="caution">
+        使用至少<span class="white">3個標籤</span>來描述這件單品
+      </div>
+      <div class="tag-area flex-top">
+        <div class="tag-list flex-center-wrap">
+          <%= f.input :color_id, collection: Color.all, prompt: "＋ 顏色", input_html: { class: 'unselected' } %>
+          <%= f.input :material_id, collection: Material.all, prompt: "＋ 質料", input_html: { class: 'unselected' } %>
+          <%= f.input :category_id, collection: Category.all, prompt: "＋ 類型", input_html: { class: 'unselected' } %>
+          <%= f.input :style_id, collection: Style.all, prompt: "＋ 風格", input_html: { class: 'unselected' } %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="btn-disable">幫我找</div>
+        <%= f.button :submit, "幫我找", class: "next hide" %>
+      </div>
     </div>
   </section>
-  <div class="form-group">
-    <%= f.button :submit, "幫我找", class: "next" %>
-  </div>
 <% end %>
+
+<script>
+
+  $('#request_img').change(function(){
+    if ($('#request_img').val() != "" ){
+      console.log("img exists!");
+      $('.upload-photo').addClass('hide');
+      $('.select-tag').removeClass('hide');
+    };
+
+  });
+
+  var count = 0;
+
+  $('.form-control').change(function(){
+    var which = $(this).attr('id');
+    if ( $(this).val() != "" ){
+      $(this).removeClass('unselected').addClass('selected');
+      count += 1;
+      console.log(count);
+    } else {
+      $(this).removeClass('selected').addClass('unselected');
+      count -= 1;
+      console.log(count);
+    };
+    if (count >= 3){
+      console.log("tag enough!!");
+      $('.btn-disable').hide();
+      $(".next").removeClass('hide');
+    };
+  });
+
+</script>
 

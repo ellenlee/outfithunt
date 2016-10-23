@@ -29,10 +29,21 @@
   max-width: 100%;
 }
 
+.img-auto-width {
+  width: auto;
+  height : auto;
+  /*max-height: 100%;*/
+  max-width: 100%;
+}
+
 /* color */
 
 .dark-bg {
-  background-color: #0b1647;
+  background-color: #4a4a4a;
+}
+
+.white {
+  color: #fff;
 }
 
 /* align */
@@ -41,6 +52,13 @@
   display:flex;
   justify-content:center;
   align-items:center;
+}
+
+.flex-center-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content:center;
 }
 
 .flex-around {
@@ -69,6 +87,11 @@
 
 /* common elements */
 
+.request-photo {
+  width: 100vw; height: 80vw;
+  background-color: #d8d8d8;
+}
+
 .alert {
   padding: 5px;
   margin : 0px;
@@ -83,11 +106,6 @@
   color: #ccc !important ;
   font-size: 7px;
   text-align: center;
-}
-
-.request-photo {
-  width: 100vw; height: 80vw;
-  background-color: #eee;
 }
 
 .checked {
