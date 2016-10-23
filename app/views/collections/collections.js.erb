@@ -1,5 +1,5 @@
 <% if current_user.collected_outfits?(@outfit) %>
-  $('.collect_btn').html('<%= link_to collection_path(@outfit), method: :delete, remote: true do %><div class="collection"><span class="checked"></span></div><% end %>');
+  $('.collect_btn').html('<%= j render "collections/collected" %>');
 <% else %>
-  $('.collect_btn').html('<%= link_to collections_path(id: params[:id]), method: :post, remote: true do %><div class="collection">收藏穿搭</div><% end %>');
+  $('.collect_btn').html('<%= j render "collections/to_collect" %>');
 <% end %>

@@ -1,19 +1,30 @@
-<div class="user-request full-width">
-  <div class="request-item">
-    <%= image_tag @request.img.url(:thumb) %>
+<section class="user-request full-width">
+  <div class="flex-center">
+    <div class="request-item flex-center">
+      <%= image_tag @request.img.url(:thumb), class: "img-auto-width" %>
+    </div>
+    <ul class="tag-index list-inline">
+      <% if @request.color.present? %>
+        <li class="color"><%= @request.color_name %></li>
+      <% end %>
+      <% if @request.material.present? %>
+        <li class="material"><%= @request.material_name %></li>
+      <% end %>
+      <% if @request.category.present? %>
+        <li class="category"><%= @request.category_name %></li>
+      <% end %>
+      <% if @request.style.present? %>
+        <li class="style"><%= @request.style_name %></li>
+      <% end %>
+    </ul>
   </div>
-  <ul class="tag-list list-inline">
-    <li class="color"><%= @request.color_name %></li>
-    <li class="material"><%= @request.material_name %></li>
-    <li class="category"><%= @request.category_name %></li>
-    <li class="style"><%= @request.style_name %></li>
-  </ul>
-</div>
-<div class="outfits-index">
+</section>
+<div class="blur"></div>
+<section class="outfits-index">
   <% @outfits.each do |outfit| %>
   	<%= link_to (image_tag outfit.image_url, height: '60px'), request_outfit_path(@request, outfit) %>
   <% end %>
-</div>
+</section>
 
 <script>
   <% if @request.style_name == t('style', scope: "tags") %>

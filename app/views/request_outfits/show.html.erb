@@ -12,19 +12,19 @@
   </div>
 </section>
 
-<section class="compare-items flex-around middle-section">
-  <div class="focus-item">
-    <%= image_tag @request.img.url(:thumb) %>
-    <span>=</span>
-    <%= link_to image_tag(@related_item.images.first.file_path) , item_path(@related_item), class: "bordered" %>
+<section class="compare-items flex-between middle-section">
+  <div class="focus-item-area">
+    <%= image_tag @request.img.url(:thumb), class: 'focus-item round' %>
+    <%= image_tag image_url("icons/icon_change.png"), class: "focus-line" %>
+    <%= link_to image_tag(@related_item.images.first.file_path, class: "focus-item") , item_path(@related_item), class: "round" %>
   </div>
-  <%= render partial: "users/collected_btn" %>
+  <%= render partial: "collections/collected_btn" %>
 </section>
 <section class="related-objects full-width flex-center dark-bg">
   <div class="footer flex-top">
     <% @other_items.each do |item| %>
-      <div class="objects flex-center bordered">
-        <%= link_to image_tag(item.images.first.file_path), item_path(item) %>
+      <div class="objects flex-center">
+        <%= link_to image_tag(item.images.first.file_path, class: "round"), item_path(item) %>
       </div>
     <% end %>
   </div>

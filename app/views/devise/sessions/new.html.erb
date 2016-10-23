@@ -1,15 +1,38 @@
-<h2>Log in</h2>
+<section class="logo flex-center">
+  <%= image_tag image_url("login/logo.png"), id: 'logo' %>
+</section>
+<section class="slogan">
+  <h3>發現衣服更多實用穿法</h3>
+</section>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<section class="input-area">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= image_tag image_url("login/icon_member.png"), class: 'icon-input' %>
+      <%= f.input :email, required: false, autofocus: true, placeholder: "Email", label: false %>
+      <%= image_tag image_url("login/icon_key.png"), class: 'icon-input' %>
+      <%= f.input :password, required: false, placeholder: "Password", label: false %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "登入", id: 'login' %>
+    </div>
+    <div class="form-actions">
+      <%= link_to "註冊", new_registration_path(resource_name), class: "btn", id: "sign-up" %>
+
+    </div>
+  <% end %>
+</section>
+<section class="login-via-fb">
+  <div class="or flex-between">
+    <div class="line"></div>
+    <span>或</span>
+    <div class="line"></div>
+  </div>
+  <div>
+    <%= link_to "FACEBOOK 登入", {}, class: "btn", id: "via-fb" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+</section>
 
-<%= render "devise/shared/links" %>
+

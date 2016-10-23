@@ -1,0 +1,83 @@
+body#sessions-new {
+  margin-top: 25vw;
+  background-image: image-url('login/background.png');
+  background-size: 100%;
+}
+
+#main-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img#logo {
+  width: 50%;
+}
+
+.slogan h3 {
+  height: 28px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-area .form-group {
+  margin-bottom: 6px;
+}
+
+.input-area .form-actions {
+  margin-top: 12px;
+}
+
+.input-area input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.input-area input, .input-area .btn, #via-fb {
+  height: 40px;
+  width: calc( 100vw - 70px);
+  border: 0px;
+  font-size: 16px;
+}
+
+.input-area input#user_password, input#user_email {
+  padding-left: 49px;
+}
+
+.icon-input {
+  width: 22px;
+  position: absolute;
+  margin-left: 13px;
+  margin-top: 9px;
+}
+
+.input-area input#login {
+  background-color: #d23076;
+  color: #fff;
+  font-weight: 600;
+}
+
+.input-area #sign-up {
+  color: #d23076;
+  border: 1px solid #d23076
+}
+
+.login-via-fb #via-fb {
+  color: #0b1647;
+  border: 1px solid #0b1647;
+}
+
+.or {
+  width: calc( 100vw - 70px);
+  color: #fff;
+  margin: 20px 0;
+  font-size: 10px;
+}
+
+.or .line {
+  width: 100px;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.3;
+}

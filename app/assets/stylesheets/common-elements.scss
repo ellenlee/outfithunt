@@ -12,7 +12,8 @@
 
 .middle-section {
   width: 100vw;
-  height: calc((100vh - 48px - 80vw)/2);
+  height: 100px;
+  background-color: #fff;
 }
 
 .request-photo.stretch {
@@ -73,16 +74,31 @@
   align-items: flex-start;
 }
 
+.flex-between {
+  display: inline-flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* effect */
 
 .bordered {
-  border-radius: 3px;
   border: solid 1px #dadada;
 }
 
 .shadow {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
   border: solid 1px #9b9b9b;
+}
+
+.round {
+  border-radius: 4px;
 }
 
 /* common elements */

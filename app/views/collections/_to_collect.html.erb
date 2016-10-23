@@ -1,0 +1,6 @@
+<%= link_to collections_path(id: params[:id]), method: :post, remote: true do %>
+  <div class="collection flex-column">
+    <%= image_tag image_url("icons/icon_heart.png"), class: "heart" %>
+    <span>收藏穿搭</span>
+  </div>
+<% end %>

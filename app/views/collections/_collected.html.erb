@@ -1,0 +1,6 @@
+<%= link_to collection_path(@outfit), method: :delete, remote: true do %>
+  <div class="collection flex-column collected">
+    <%= image_tag image_url("icons/icon_heart.png"), class: "heart" %>
+    <span>已收藏</span>
+  </div>
+<% end %>

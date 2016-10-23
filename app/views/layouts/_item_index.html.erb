@@ -1,0 +1,9 @@
+<section class="related-objects full-width flex-center dark-bg">
+  <div class="footer flex-top">
+    <% @other_items.each do |item| %>
+      <div class="objects flex-center">
+        <%= link_to image_tag(item.images.first.file_path, class: "round"), item_path(item) %>
+      </div>
+    <% end %>
+  </div>
+</section>
