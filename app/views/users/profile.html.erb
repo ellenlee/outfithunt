@@ -13,6 +13,22 @@
     <% end %>
   </div>
 </section>
+<section class="tag-list-request">
+  <ul class="tag-index list-inline">
+      <% if @request.color.present? %>
+        <li class="color"><%= @request.color_name %></li>
+      <% end %>
+      <% if @request.material.present? %>
+        <li class="material"><%= @request.material_name %></li>
+      <% end %>
+      <% if @request.category.present? %>
+        <li class="category"><%= @request.category_name %></li>
+      <% end %>
+      <% if @request.style.present? %>
+        <li class="style"><%= @request.style_name %></li>
+      <% end %>
+    </ul>
+</section>
 
 <section class="my-outfits full-width">
   <div class="column line-1st">
