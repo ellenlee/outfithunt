@@ -18,7 +18,7 @@ class Outfit < ApplicationRecord
   has_many :collected_outfits, through: :collections, source: :user
 
 	def related_item(request)
-		item = self.items.related_item(request)
+		item = self.items.where(color: request.color, category: request.category) || self.items.related_item(request)
 		if item.present?
 			item.first
 		end

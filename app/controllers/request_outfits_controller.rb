@@ -4,7 +4,6 @@ class RequestOutfitsController < ApplicationController
 	def index
 		@outfits = Outfit.related_list(@request)
 
-		# @outfits = Outfit.includes(:items).where( items: {color: @request.color, category: @request.category })
 	end
 
 	def show
