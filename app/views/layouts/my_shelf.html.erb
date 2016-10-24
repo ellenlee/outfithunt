@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Outfit Hunt 我的衣櫃</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+  </style>
+  </head>
+
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
+
+    <div id="main-frame">
+      <% if current_user.present? %>
+        <nav class="header-bar shelf">
+          <div class="back">
+            <%= link_to (image_tag image_url("icons/icon_next.png")), destroy_user_session_path, :method => :delete %>
+          </div>
+          <div class="title flex-center">我的衣櫃</div>
+        </nav>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

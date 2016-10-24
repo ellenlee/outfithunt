@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+  layout 'my_shelf'
 
   def profile
     @requests = current_user.requests
+    @request = current_user.requests.last
 
     @outfits_odd = Array.new
     @outfits_even = Array.new

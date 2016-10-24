@@ -1,26 +1,57 @@
-.my-requests {
-  overflow: auto;
-  height: 200px;
-  position: fixed;
-  z-index: 500;
+#users-profile {
 }
 
-.my-requests .profile-index-img {
+.my-requests {
+  overflow: auto;
+  height: 182px;
+  position: fixed;
+  z-index: 500;
+  top: 48px;
+}
+
+/* focus */
+
+.selected-request {
+  /*background-color: yellow;*/
+  background-color: rgba(74, 74, 74, 0.6);
+  z-index: 800;
+  position: fixed;
+  height: 182px;
+}
+
+.focus-img {
   overflow: hidden;
   width: 140px;
   height: 140px;
   margin-right: 10px;
 }
 
+/* request-index */
+
+.request-index {
+  /*position: fixed;*/
+  /*z-index: -100;*/
+  /*display:flex;
+  justify-content: flex-start;
+  align-items: center;*/
+}
+
+.my-requests .profile-index-img {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+}
+
 .my-requests img {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 100%;
+  /*max-height: 100%;*/
 }
 
 .my-outfits {
-  margin-top: 200px;
+  margin-top: 230px;
   height: calc( 100vh - 200px - 48px);
   overflow: auto;
   padding-top: 12px;

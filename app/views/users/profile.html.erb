@@ -1,5 +1,11 @@
-<section class="my-requests dark-bg full-width flex-center">
-  <div class="flex-center">
+<section class="my-requests dark-bg full-width flex-start">
+  <div class="full-width flex-center selected-request">
+    <div class="focus-img flex-center round shadow">
+      <%= image_tag @request.img.url(:medium) %>
+    </div>
+  </div>
+
+  <div class="request-index flex-center">
     <% @requests.each do |request| %>
       <div class="profile-index-img flex-center">
         <%= image_tag request.img.url(:medium) %>
@@ -24,4 +30,3 @@
     <% end %>
   </div>
 </section>
-
