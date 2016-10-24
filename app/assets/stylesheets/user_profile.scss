@@ -56,6 +56,7 @@ body#users-profile .tag-list-request {
   position: fixed;
   top: 219px;
   z-index: 500;
+  width: 100vw;
 }
 
 .tag-list-request li {
@@ -64,12 +65,11 @@ body#users-profile .tag-list-request {
   border-radius: 5px;
   background-color: #9b9b9b;
   font-size: 9px;
-  padding-top: 5px;
 }
 /* my outfits */
 
 .my-outfits {
-  margin-top: 235px;
+  margin-top: 240px;
   height: calc( 100vh - 200px - 48px);
   overflow: auto;
   padding-top: 12px;
