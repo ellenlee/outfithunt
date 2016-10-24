@@ -6,11 +6,13 @@
   </div>
 
   <div class="request-index flex-center">
-    <% @requests.each do |request| %>
-      <div class="profile-index-img flex-center">
-        <%= image_tag request.img.url(:medium) %>
-      </div>
-    <% end %>
+    <div class="flex-center">
+      <% @requests.each do |request| %>
+        <div class="profile-index-img flex-center">
+          <%= image_tag request.img.url(:medium) %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </section>
 <section class="tag-list-request flex-center">
