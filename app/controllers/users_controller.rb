@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   layout 'my_shelf'
 
   def profile
-    @requests = current_user.requests
     @request = current_user.requests.last
+    @requests = current_user.requests.where.not(id: @request).order(id: :desc)
 
     @outfits_odd = Array.new
     @outfits_even = Array.new
