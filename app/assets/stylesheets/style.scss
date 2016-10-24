@@ -75,7 +75,7 @@ body#requests-new, body#requests-create, body#item_outfits-show, body#request_ou
 .outfits-index {
   position: absolute;
   z-index: -100;
-  top: 78px;
+  top: 103px;
   width: 100vw;
   height: calc( 100vh - 40px);
   overflow-y: auto;
@@ -131,8 +131,6 @@ body#requests-new, body#requests-create, body#item_outfits-show, body#request_ou
   color: #fff;
   border: solid 0px #9b9b9b;
 }
-
-
 
 .collected {
   background-color: #9b9b9b;

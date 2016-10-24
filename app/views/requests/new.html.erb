@@ -57,6 +57,10 @@
 
   var count = 0;
 
+  $('#request_color_id').removeClass('unselected').addClass('selected');
+  $('#request_category_id').removeClass('unselected').addClass('selected');
+  count = 2;
+
   $('.form-control').change(function(){
     var which = $(this).attr('id');
     if ( $(this).val() != "" ){

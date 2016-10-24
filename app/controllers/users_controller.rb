@@ -8,7 +8,11 @@ class UsersController < ApplicationController
     @outfits_odd = Array.new
     @outfits_even = Array.new
 
-    outfits = current_user.collected_outfits
+    outfits_record = current_user.collections.order(id: :desc)
+    outfits = outfits_record.map do |record|
+      Outfit.find(record.outfit_id)
+    end
+
     outfits.each_with_index do |outfit, index|
       if index % 2 == 1
         @outfits_odd << outfit
