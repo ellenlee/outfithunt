@@ -36,14 +36,14 @@
   <div class="column line-1st">
     <% @outfits_odd.each do |outfit| %>
       <div class="outfit-frame">
-        <%= image_tag outfit.image.file_path, class: "" %>
+        <%= link_to image_tag(outfit.image.file_path), request_outfit_path(@request, outfit) %>
       </div>
     <% end %>
   </div>
   <div class="column line-2nd">
     <% @outfits_even.each do |outfit| %>
       <div class="outfit-frame ">
-        <%= image_tag outfit.image.file_path, class: "" %>
+        <%= link_to image_tag(outfit.image.file_path), request_outfit_path(@request, outfit) %>
       </div>
     <% end %>
   </div>
