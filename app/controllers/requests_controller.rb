@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
 	def new
-		@request = current_user.requests.build(color_id: 6, category_id: 1)
+		@request = current_user.requests.build
 	end
 
 	def create
